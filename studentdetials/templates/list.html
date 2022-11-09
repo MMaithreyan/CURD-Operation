@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="{% static '/css/liststyle.css' %}">
+        <link rel="stylesheet" href="/static/css/liststyle.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="{% static '/css/style.css' %}">
+        
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+            integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+            crossorigin="anonymous"></script>
+
+        <script src="https://kit.fontawesome.com/1c7e477026.js" crossorigin="anonymous"></script>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row pt-5 justify-content-center">
+                <div class="col-md-offset-1 col-md-10">
+                    <div class="panel">
+                        <div class="panel-body table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Firstname</th>
+                                        <th>Lastname</th>
+                                        <th>E-mail</th>
+                                        <th>Phone Number</th>
+                                        <th>Department</th>
+                                        <th>Address</th>
+                                        <th>Update</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for x in mymembers %}
+                                    <tr>
+                                        <td>{{ x.id }}</td>
+                                        <td>{{ x.fullname }}</td>
+                                        <td>{{ x.blood }}</td>
+                                        <td>{{ x.email }}</td>
+                                        <td>{{ x.phone }}</td>
+                                        <td>{{ x.department }}</td>
+                                        <td>{{ x.address }}</td>
+                                        <td>
+                                            <a href='edit/{{x.id}}'>
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                            </a>
+                                        </td>
+
+                                        <td><a href='delete/{{x.id}}'>
+                                                <i class="fa-solid fa-trash-can"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    </html>
+
+
+    <!-- 
+
+    <table border='1'>
+        <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>E-mail</th>
+            <th>Phone Number</th>
+            <th>Department</th>
+            <th>Address</th>
+            <th>Options</th>
+        </tr>
+
+        {% for x in mymembers %}
+        <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.fullname }}</td>
+            <td>{{ x.blood }}</td>
+            <td>{{ x.email }}</td>
+            <td>{{ x.phone }}</td>
+            <td>{{ x.department }}</td>
+            <td>{{ x.address }}</td>
+            <td><a href='edit/{{x.id}}'>Edit</a></td>
+            <td><a href='delete/{{x.id}}'>Delete</a></td>
+
+        </tr>
+        {% endfor %}
+    </table> -->
+</body>
+
+</html>

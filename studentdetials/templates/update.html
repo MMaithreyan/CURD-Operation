@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static '/css/updatestyle.css' %}">
+</head>
+
+<body>
+    <div class="container contact-form">
+        <div class="contact-image">
+            <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact" />
+        </div>
+        <form action='updaterecord/{{ mymember.id }}' method="POST">
+            {% csrf_token %}
+            <h3>Update Your Data</h3>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="name" class="form-control"  value="{{ mymember.fullname }}"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Blood Group</label>
+                        <input type="text" name="blood" class="form-control" value="{{ mymember.blood }}" />
+                    </div>
+                    <div class="form-group">
+                        <label>Your E-mail-id</label>
+                        <input type="text" name="email" class="form-control" value="{{ mymember.email }}"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Phone Number</label>
+                        <input type="text" name="phone" class="form-control" value="{{ mymember.phone }}" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Your Department</label>
+                        <input type="text" name="department" class="form-control" value="{{ mymember.department }}" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Your Address</label>
+                        <textarea class="form-control" name="address" id="" cols="42" rows="6">{{ mymember.address }}</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" name="btnSubmit" class="btnContact" value="Submit" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
