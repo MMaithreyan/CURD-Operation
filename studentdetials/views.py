@@ -24,12 +24,8 @@ def studentform(request):
         data.save()
         data.clean()
         # return render(request, "list.html")
-        mydata = studentdb.objects.all().values()
-        template = loader.get_template('list.html')
-        context = {
-            'mymembers': mydata,
-        }
-        return HttpResponse(template.render(context, request))       
+        return redirect("list/")
+           
     else:
         return render(request, "form.html")
 
