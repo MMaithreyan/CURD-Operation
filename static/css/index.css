@@ -1,23 +1,57 @@
-* {
-	padding: 0;
+*{
 	margin: 0;
-	box-sizing: border-box;
-}
-/* button {
-	-webkit-box-shadow: 0px 0px 16px 12px rgba(0, 0, 0, 1);
-	-moz-box-shadow: 0px 0px 16px 12px rgba(0, 0, 0, 1);
-	box-shadow: 0px 0px 16px 12px rgba(0, 0, 0, 1);
-} */
-.container {
+	padding: 0;
+	font-family: "montserrat",sans-serif;
+  }
+  
+  body{
+	/* background: #224591; */
+	background-image: url(https://cdn.dribbble.com/users/24711/screenshots/3886002/falcon_persistent_connection_2x.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 100vh;
 	display: flex;
-}
-.images {
-	float: right;
-	width: 90%;
-}
-.images img{
-    width: 100%;
-}
-.container .buttons .btn a {
+	align-items: center;
+	justify-content: center;
+  }
+  
+  
+  .social-buttons a{
+	display: inline-flex;
 	text-decoration: none;
-}
+	font-size: 18px;
+	width: 60px;
+	height: 60px;
+	color: #fff;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	margin: 0 8px;
+  }
+  
+  .social-buttons a::before{
+	content: "";
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	background: linear-gradient(45deg,#1500ff,#00eeff);
+	border-radius: 50%;
+	z-index: -1;
+	transition: 0.3s ease-in;
+  }
+  
+  .social-buttons a:hover::before{
+	transform: scale(0);
+  }
+  
+  .social-buttons a i{
+	transition: 0.3s ease-in;
+  }
+  
+  .social-buttons a:hover i{
+	background: linear-gradient(45deg,#fff,#fff);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transform: scale(2.2);
+  }
+  

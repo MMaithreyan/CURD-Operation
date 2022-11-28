@@ -22,9 +22,9 @@ def studentform(request):
         data = studentdb(fullname=fullname, blood=blood, email=email,
                          phone=phone, department=department, address=address)
         data.save()
-        data.clean()
+        # data.clean()
         # return render(request, "list.html")
-        return redirect("list/")
+        # return redirect("list/")
            
     else:
         return render(request, "form.html")
@@ -80,3 +80,6 @@ def updaterecord(request, id):
         'mymembers': mydata,
     }
     return HttpResponse(template.render(context, request))
+
+def adduser(request):
+    return render(request,'form.html')
