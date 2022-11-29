@@ -83,3 +83,7 @@ def updaterecord(request, id):
 
 def adduser(request):
     return render(request,'form.html')
+
+    
+def view(request):
+    return render(request,'list.html')

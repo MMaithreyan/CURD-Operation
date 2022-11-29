@@ -6,13 +6,15 @@
   
   body{
 	/* background: #224591; */
-	background-image: url(https://cdn.dribbble.com/users/24711/screenshots/3886002/falcon_persistent_connection_2x.gif);
+	background-image: url(https://thefintechtimes.com/wp-content/uploads/2022/08/iStock-1346223165-e1660130768659.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	background-size:cover;
+	
   }
   
   
@@ -34,7 +36,7 @@
 	position: absolute;
 	width: 60px;
 	height: 60px;
-	background: linear-gradient(45deg,#1500ff,#00eeff);
+	background: linear-gradient(45deg,#1500ff,#1100ff);
 	border-radius: 50%;
 	z-index: -1;
 	transition: 0.3s ease-in;
@@ -49,7 +51,7 @@
   }
   
   .social-buttons a:hover i{
-	background: linear-gradient(45deg,#fff,#fff);
+	background: linear-gradient(45deg,#00ebf1,#00ebf1);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	transform: scale(2.2);

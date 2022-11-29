@@ -9,4 +9,5 @@ urlpatterns = [
     path('list/edit/<int:id>', views.studentupdate, name='studentupdate'),
     path('list/edit/updaterecord/<int:id>',views.updaterecord, name='updaterecord'),
     path('adduser/',views.adduser),
+    path('view/',views.view),
 ]
