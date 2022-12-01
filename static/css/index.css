@@ -1,112 +1,126 @@
-*{
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
 	margin: 0;
 	padding: 0;
-	font-family: "montserrat",sans-serif;
-  }
-  
-  body{
-	/* background: #224591; */
-	background-image: url(https://thefintechtimes.com/wp-content/uploads/2022/08/iStock-1346223165-e1660130768659.jpg);
+	box-sizing: border-box;
+}
+
+*:focus,
+*:active {
+	outline: none !important;
+	-webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+	display: grid;
+	height: 100%;
+	width: 100%;
+	font-family: "Poppins", sans-serif;
+	place-items: center;
 	background-repeat: no-repeat;
 	background-position: center;
-	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-size:cover;
-	
-  }
-  
-/*   
-  .social-buttons a{
+	background-size: cover;
+	background-image: url(https://thefintechtimes.com/wp-content/uploads/2022/08/iStock-1346223165-e1660130768659.jpg);
+}
+
+.wrapper {
 	display: inline-flex;
-	text-decoration: none;
+	list-style: none;
+}
+
+.wrapper .icon {
+	position: relative;
+	background: #000;
+	border-radius: 50%;
+	padding: 15px;
+	margin: 30px;
+	width: 50px;
+	height: 50px;
 	font-size: 18px;
-	width: 60px;
-	height: 60px;
-	color: #fff;
+	display: flex;
 	justify-content: center;
 	align-items: center;
-	position: relative;
-	margin: 0 8px;
-  } */
-/*   
-  .social-buttons a::before{
-	content: "";
+	flex-direction: column;
+	box-shadow: 0px 1px 5px 4px rgb(255 255 255);
+	cursor: pointer;
+	transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
 	position: absolute;
-	width: 60px;
-	height: 60px;
-	background: linear-gradient(45deg,#1500ff,#1100ff);
-	border-radius: 50%;
-	z-index: -1;
-	transition: 0.3s ease-in;
-  }
-  
-  .social-buttons a:hover::before{
-	transform: scale(0);
-  }
-  
-  .social-buttons a i{
-	transition: 0.3s ease-in;
-  }
-  
-  .social-buttons a:hover i{
-	background: linear-gradient(45deg,#00ebf1,#00ebf1);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	transform: scale(2.2);
-  }
-   */
-
-   .circle_fl{
-    display: inline-block;
-    position: relative;
-    box-sizing: border-box;
-    text-decoration: none;
-    color: #FFF;
-    width: 80px;
-    height: 80px;
-    line-height: 60px;
-    padding: 5px;
-	margin: 20px;
-    font-size: 25px;
-    border-radius: 50%;
-    text-align: center;
-    vertical-align: middle;
-    font-weight: bold;
-    box-shadow: inset 0 2px 0px rgba(255, 255, 255, 0.25), inset 0 -2px 0px rgba(0, 0, 0, 0.18);
-    transition: .2s;
-}
-.circle_fl .fa{
-    line-height: 30px;
-}
-.circle_fl:hover{
-    box-shadow: none;
+	top: 0;
+	font-size: 14px;
+	background: #ffffff;
+	color: #ffffff;
+	padding: 5px 8px;
+	border-radius: 5px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.circle_fl.add{
-	background: #67ba2c;
-	border: solid 5px #80c54e;
-
+.wrapper .tooltip::before {
+	position: absolute;
+	content: "";
+	height: 8px;
+	width: 8px;
+	background: #ffffff;
+	bottom: -3px;
+	left: 50%;
+	transform: translate(-50%) rotate(45deg);
+	transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.circle_fl.read{
-    background: #3b75d4;
-    border: solid 5px #3b75d4;
+.wrapper .icon:hover .tooltip {
+	top: -45px;
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
 }
 
-.circle_fl.delete{
-    background: #ef4d4d;
-    border: solid 5px #ef4d4d;
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
 }
 
-.circle_fl.upt{
-    background: #1da1f3;
-	border: solid 5px #1da1f3;
-
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+	background: #10a908;
+	color: #ffffff;
 }
-.circle_fl.admin{
-    background: #fff024;
-	border: solid 5px #ffea00;
 
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+	background: #1da1f2;
+	color: #ffffff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+	background: #e46f40;
+	color: #ffffff;
+}
+
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before {
+	background: #35cac0;
+	color: #ffffff;
+}
+
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before {
+	background: #cd201f;
+	color: #ffffff;
+}
+ul li a i{
+	color: white;
 }
