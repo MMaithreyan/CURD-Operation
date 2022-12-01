@@ -23,8 +23,8 @@ def studentform(request):
                          phone=phone, department=department, address=address)
         data.save()
         # data.clean()
-        # return render(request, "list.html")
-        # return redirect("list/")
+        return render(request, "list.html")
+        return redirect("list/")
            
     else:
         return render(request, "form.html")
