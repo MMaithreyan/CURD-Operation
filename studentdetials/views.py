@@ -9,7 +9,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 def index(request):
     return render(request,'index.html')
 
-def studentform(request):
+def adduser(request):
     if request.method == 'POST':
         fullname = request.POST.get('fullname')
         blood = request.POST.get('blood')
@@ -23,12 +23,12 @@ def studentform(request):
                          phone=phone, department=department, address=address)
         data.save()
         # data.clean()
-        return render(request, "list.html")
-        return redirect("list/")
+        return render(request, "form.html")
+        # return redirect("list/")
            
     else:
         return render(request, "form.html")
-
+    return render(request, "form.html")
 
 def studentlist(request):
     # datalist = studentdb.objects.all()
@@ -81,8 +81,8 @@ def updaterecord(request, id):
     }
     return HttpResponse(template.render(context, request))
 
-def adduser(request):
-    return render(request,'form.html')
+# def adduser(request):
+#     return render(request,'form.html')
 
     
 def view(request):

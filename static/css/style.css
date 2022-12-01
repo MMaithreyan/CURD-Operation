@@ -1,7 +1,13 @@
 body{
     background-color: #dee9ff;
 }
-
+.registration-form .back{
+    background-color: rgb(255, 255, 255);
+    color: #000;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
 .registration-form{
 	padding: 50px 0;
 }
